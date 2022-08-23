@@ -1,0 +1,27 @@
+﻿@page
+@model LibraryApp.Pages.LoginLogout.LoginTwoFactorAuthenticationModel
+@{
+	<h1>TwoFactorAuthentication</h1>
+	<hr />
+	
+	<div class="row">
+		<div class="col-md-4">
+			<form method="post" asp-route-returnUrl=@ViewData["ReturnUrl"]>
+				<div asp-validation-summary="All" class="text-danger"></div>
+				<div class="form-group">
+					<label class="control-label">Provide your authentication code</label>
+					<input asp-for="TwoFactorModel.TwoFactorCode" class="form-control" autocomplete="off" />
+					<span asp-validation-for="TwoFactorModel.TwoFactorCode" class="text-danger"></span>
+				</div>
+				<br>
+				<input asp-for="TwoFactorModel.RememberMe" type="hidden" />
+				<div class="form-group">
+					<input type="submit" value="Log in" class="btn btn-primary" />
+				</div>
+			</form>
+		</div>
+	</div>
+	@section scripts{
+		<partial name="_ValidationScriptsPartial" />
+	}
+}

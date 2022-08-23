@@ -1,0 +1,40 @@
+﻿@page 
+@model LibraryApp.Pages.LoginLogout.LoginModel
+@using  Entities.Model
+@{
+	<h1>Login</h1>
+	<hr />
+	<div class="row">
+		<div class="col-md-4">
+			<form method="post" asp-route-returnurl=@ViewData["ReturnUrl"]>
+				<div asp-validation-summary=All class="alert-danger"></div>
+				<div class="form-group">
+					<label class="control-label">Username</label>
+					<input asp-for=UserLogin.UserName class="form-control" autocomplete="off" />
+					<span asp-validation-for=UserLogin.UserName class="text-danger"></span>
+				</div>
+				<br>
+				<div class="form-group">
+					<label class="control-label">Password</label>
+					<input type="password" asp-for=UserLogin.Password class="form-control" />
+					<span asp-validation-for=UserLogin.Password class="text-danger"></span>
+				</div>
+				<br>
+				<div>
+					<label class="control-label"></label>
+					<input class="form-check-input" asp-for=UserLogin.RememberMe /> @Html.DisplayNameFor(m => m.UserLogin.RememberMe)
+				</div>
+				<br>
+				<div class="form-group">
+					<input type="submit" value="Log in" class="btn btn-primary" />
+				</div>
+			</form>
+			<div class="form-group">
+				<a asp-page="/Password/ForgotPassword">Forgot Password?</a>
+			</div>
+		</div>
+	</div>
+	@section scripts{
+		<partial name="_ValidationScriptsPartial" />
+	}
+}
