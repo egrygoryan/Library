@@ -1,0 +1,19 @@
+﻿@page
+@model LibraryApp.Pages.SearchMovieModel
+@{
+	<h1>Search for a movie you want to add</h1>
+	<hr />
+	<div class="row">
+		<div class="col-md-4">
+			<div class="form-group">
+				<label class="control-label">Movie Title</label>
+				<input class="form-control" autocomplete="off" id="movieTitle"/>
+			</div>
+			<br>
+			<div class="form-group">
+				<input type="submit" value="Search" class="btn btn-primary" id="searchMovie" />
+			</div>
+		</div>
+	</div>
+	<script type="module" src="~/js/findMovie.js"></script>
+}

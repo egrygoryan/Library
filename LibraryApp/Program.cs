@@ -9,6 +9,7 @@ using Entities.Model;
 using Entities.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using MovieAPI;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,7 +30,7 @@ builder.Services.AddIdentity<UserModel, IdentityRole>(options => {
     .AddDefaultTokenProviders();
 
 // Add services to the container.
-builder.Services.AddScoped<IBookService, BookService>();
+builder.Services.AddScoped<IMovieService, MovieService>();
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 builder.Services.AddRazorPages()
     .AddRazorPagesOptions(options => {
@@ -37,6 +38,7 @@ builder.Services.AddRazorPages()
         options.Conventions.AddPageRoute("/LoginLogout/Logout", "/Logout");
         options.Conventions.AddPageRoute("/LoginLogout/LoginTwoFactorAuthentication", "TwoFactorAuthentication");
     });
+builder.Services.AddControllers();
 
 
 builder.Services.ConfigureApplicationCookie(options => options.LoginPath = "/Login");
@@ -69,6 +71,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapRazorPages();
+app.MapControllers();
 app.MigrateDatabase();
 
 app.Run();

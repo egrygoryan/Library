@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "..\Entities\Ent
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailService", "..\EmailService\EmailService.csproj", "{2C7C90CF-9758-4C11-9AB4-1E7A48BF2A04}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieAPI", "..\MovieAPI\MovieAPI.csproj", "{6B88C5E0-785D-4AAE-B497-845B9C036C61}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{2C7C90CF-9758-4C11-9AB4-1E7A48BF2A04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C7C90CF-9758-4C11-9AB4-1E7A48BF2A04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C7C90CF-9758-4C11-9AB4-1E7A48BF2A04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B88C5E0-785D-4AAE-B497-845B9C036C61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B88C5E0-785D-4AAE-B497-845B9C036C61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B88C5E0-785D-4AAE-B497-845B9C036C61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B88C5E0-785D-4AAE-B497-845B9C036C61}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

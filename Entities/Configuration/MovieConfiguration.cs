@@ -3,18 +3,20 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Entities {
-    public class BookConfiguration : IEntityTypeConfiguration<BookModel> {
-        public void Configure(EntityTypeBuilder<BookModel> builder) {
+    public class MovieConfiguration : IEntityTypeConfiguration<Movie> {
+        public void Configure(EntityTypeBuilder<Movie> builder) {
             builder.HasData(
-                new BookModel { 
+                new Movie { 
                     Id = 1,
                     Title = "Adventures of Hercules",
-                    Year = 1992 
+                    Year = 1992,
+                    Genre = "Comedy"
                 },
-                new BookModel {
+                new Movie {
                     Id = 2,
                     Title = "Rain",
-                    Year = 1981
+                    Year = 1981,
+                    Genre = "Drama"
                 });
         }
     }

@@ -4,6 +4,7 @@ using Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,13 +12,14 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Entities.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20220825101850_MovieInsteadBook")]
+    partial class MovieInsteadBook
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.8")
+                .HasAnnotation("ProductVersion", "6.0.7")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -32,9 +34,6 @@ namespace Entities.Migrations
 
                     b.Property<string>("Genre")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
@@ -169,15 +168,15 @@ namespace Entities.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "d7bb2f7e-e9d2-434e-b45e-d4b414f28c0a",
-                            ConcurrencyStamp = "8b1fc18b-8872-41e8-88d0-ba80af6e9e39",
+                            Id = "9ae673c9-6222-47b8-9824-f7a482f03652",
+                            ConcurrencyStamp = "6c0b6e9b-7548-4610-bd0b-16a01cae8106",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "b7cb7f71-7628-4689-9cf5-fc8a4f2e475b",
-                            ConcurrencyStamp = "836714a1-8d4c-4acd-94ce-b03c5dead4dc",
+                            Id = "c51adc43-6efa-4908-8d11-a58197995133",
+                            ConcurrencyStamp = "346223b2-c643-4f98-ada4-61a6e94a7c14",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });
